@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body class="body1">
+    <title>Scrollable Media Collage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .body1
+        {
+            background-color: black;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        .collage 
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+            grid-auto-rows: 200px; /* Default row height */
+            gap: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .collage video, .collage img 
+        {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures media fills the grid cell */
+            border-radius: 5px;
+        }
+
+        .collage video 
+        {
+            background: #000;
+        }
+        .nigga
+        {
+            color:black;
+        }
+    </style>
+
+
+    <div class="collage">
+        <!-- Videos -->
+        <video controls autoplay muted loop>
+            <source src="prerana.img6.mp4" type="video/mp4">
+        </video>
+        <video controls autoplay muted loop>
+            <source src="prerana.img2.mp4" type="video/mp4">
+        </video>
+        <video controls autoplay muted loop>
+            <source src="prerana.img4.mp4" type="video/mp4">
+        </video>
+        <video controls autoplay muted loop>
+            <source src="WhatsApp Video 2024-12-04 at 22.42.21_3e63816a.mp4" type="video/mp4">
+        </video>
+
+        <!-- Images -->
+        <img src="prerana.img1.jpg" alt="Image 1">
+        <img src="prerana.img5.jpg" alt="Image 2">
+        <img src="sweets.jpg" alt="Image 3">
+        <img src="img4.jpeg" alt="Image 4">
+        <img src="google1.jpeg" alt="Image 5">
+        <img src="google2.jpeg" alt="Image 6">
+        <img src="google5.jpg" alt="Image 7">
+        <img src="whatsapp21.jpg" alt="Image 5">
+        <img src="google8.jpg" alt="Image 6">
+        <img src="google6.webp" alt="Image 7">
+        <img src="last.jpg" alt="Image 8">
+        <img src="last.jpg" alt="Image 9">
+    </div>
+</body>
+</html>
