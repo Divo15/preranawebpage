@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prerana Website</title>
+    <title>Prerana Educational and Charity Trust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
         
         body {
             padding-top: 120px;
             margin: 0;
-            background-color: black;
+            background-color: #121212;
             color: white;
         }
-
         
         .wrapper {
             height: 100px;
-            background-color: black;
-            padding: 10px;
+            background-color: #000000;
+            padding: 10px 5%;
             display: flex;
             align-items: center;
             position: fixed;
@@ -26,6 +33,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 15px rgba(255, 0, 0, 0.2);
         }
 
         .logo {
@@ -35,21 +43,25 @@
         }
 
         .search {
-            color: red;
+            color: white;
             border-radius: 30px;
-            background-color: black;
+            background-color: #1a1a1a;
             height: 40px;
             width: 300px;
             padding: 0 20px;
             border: 1px solid red;
             font-size: 16px;
         }
+        
+        .search:focus {
+            outline: none;
+            border-color: #ff4500;
+        }
 
         .wrapper-content {
             display: flex;
             gap: 30px;
             margin-left: auto;
-            margin-right: 200px;
         }
 
         .dropdown {
@@ -58,206 +70,107 @@
         }
 
         .dropdown button {
-            background-color: black;
+            background-color: transparent;
             color: red;
             padding: 10px 15px;
             border: none;
             cursor: pointer;
             border-radius: 20px;
             font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown button:hover {
+            background-color: rgba(255, 0, 0, 0.1);
         }
 
         .dropdown .content {
             display: none;
             position: absolute;
-            background-color: white;
-            min-width: 150px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            border-radius: 5px;
-            
+            background-color: #1a1a1a;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            z-index: 1;
         }
-
-        .dropdown:hover .content {
-            display: block;
-        }
-        .dropdown a {
-            display: block;
-            color: rgb(147, 3, 3);
-            text-decoration: none;
-            padding: 10px 15px;
-        }
-
         
         .dropdown:hover .content {
             display: block;
         }
+        
+        .dropdown a {
+            display: block;
+            color: #f1f1f1;
+            text-decoration: none;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown a:hover {
+            background-color: rgba(255, 0, 0, 0.2);
+            color: white;
+        }
 
+        /* Cover Section */
+        .cover-section {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
 
-
-    
         .cover {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-       
-        .black-bg {
-            background-color: rgba(0, 0, 0, 0.4); /* Reduced opacity */
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .initiatives, .contact-form,.stakeholders {
-            background-image: url('imdadul-hussain-YiA4wqVpLQQ-unsplash.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            padding: 50px 10%;
-            text-align: center;
-        }
-
-    
-        .initiatives::before, .contact-form::before ,.middle,.stakeholders{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
-            z-index: 1;
-        }
-
-        .initiatives h2, .initiatives ul, 
-        .contact-form h2, .contact-form form {
-            position: relative;
-            z-index: 2;
-        }
-
-        .initiatives ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .initiatives ul li {
-            font-size: 18px;
-        }
-
-        /* Contact Form */
-        .contact-form input, 
-        .contact-form textarea {
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            width: 50%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-form button {
-            background: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-left: 200px;
-        }
-
-    
-        footer {
-            background-color: black;
-            text-align: center;
-            font-size: 14px;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .footer-text {
-            color: white;
-        }
-
-        footer a {
-            color: red;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .initiatives, .contact-form, .stakeholders,.middle {
-            background-image: url('imdadul-hussain-YiA4wqVpLQQ-unsplash.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            padding: 50px 10%;
-            text-align: center;
-        }
-
-        .initiatives::before, .contact-form::before, .stakeholders::before ,.middle::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .initiatives h2, .initiatives ul, .contact-form h2, .contact-form form, .stakeholders h1, .stakeholders h2, .stakeholders p, .stakeholders strong {
-            position: relative;
-            z-index: 2;
-        }
-        .space
-        {
-            margin-left: 200px;
-        }
+        /* Middle Section */
         .middle {
-            background-color: white;
-            color: black;
-            width:100%;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #121212;
+            position: relative;
+            padding: 60px 5%;
+            margin-bottom: 50px;
+        }
+        
+        .middle-container {
             display: flex;
             align-items: center;
-            gap: 40px; /* Space between text and images */
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        /* Left side (Text Content) */
         .content {
             flex: 1;
-            text-align: left;
         }
 
         .be_part {
             font-size: 40px;
             font-weight: bold;
-            margin-bottom: 10px;
-            color:aliceblue;
+            margin-bottom: 20px;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .be_part span {
+            color: red;
         }
 
         .genorously {
             color: orange;
-            font-size: 30px;
-            font-style: italic;
-        }
-
-        .how {
-            color: white;
             font-size: 24px;
-            line-height: 1.6;
+            font-style: italic;
             margin-bottom: 20px;
         }
 
-        /* Buttons */
+        .how {
+            color: #e0e0e0;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
         .button-container {
             display: flex;
             gap: 15px;
@@ -271,17 +184,25 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .orange_button {
-            background-color: orangered;
+            background-color: #ff4500;
+        }
+        
+        .orange_button:hover {
+            background-color: #ff3700;
         }
 
         .blue_button {
-            background-color: rgb(82, 82, 160);
+            background-color: #3252a0;
+        }
+        
+        .blue_button:hover {
+            background-color: #264281;
         }
 
-        /* 'More About Us' Button */
         .more_about {
             display: inline-block;
             margin-top: 20px;
@@ -291,7 +212,7 @@
             border-radius: 20px;
             text-decoration: none;
             font-size: 14px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .more_about:hover {
@@ -299,153 +220,504 @@
             color: white;
         }
 
-        /* Images Section (Beside Text) */
         .pictures {
-            flex: 2;
-            display: table-column;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            gap: 10px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .pictures img {
-            width: 180px;
+            width: 100%;
             height: 180px;
             border-radius: 10px;
             object-fit: cover;
         }
 
-        /* Video Play Icon */
-  
+        /* Stakeholders Section */
+        .stakeholders {
+            background-color: #0a0a0a;
+            position: relative;
+            padding: 60px 5%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .stakeholders h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .stakeholders h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #f1f1f1;
+        }
+        
+        .stakeholders strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: orange;
+        }
+        
+        .stakeholders p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
+        /* Initiatives Section */
+        .initiatives {
+            background-color: #121212;
+            position: relative;
+            padding: 60px 5%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .initiatives h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .initiatives ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .initiatives ul li {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .initiatives ul li:hover {
+            background-color: rgba(255, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            background-color: #0a0a0a;
+            position: relative;
+            padding: 60px 5%;
+            margin-bottom: 50px;
+        }
+        
+        .contact-form h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #333;
+            font-size: 16px;
+            background-color: #1a1a1a;
+            color: white;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: red;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background: red;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .contact-form button:hover {
+            background: #ff3300;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 40px 5% 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: red;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #ff4500;
+        }
+        
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: red;
+            transform: translateY(-5px);
+        }
+        
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .middle {
+        @media (max-width: 992px) {
+            .middle-container {
                 flex-direction: column;
-                text-align: center;
             }
-
+            
             .pictures {
-                flex-direction: column;
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .wrapper {
+                padding: 10px 3%;
+            }
+            
+            .search {
+                width: 200px;
+            }
+            
+            .wrapper-content {
+                gap: 15px;
+            }
+            
+            .be_part {
+                font-size: 32px;
+            }
+            
+            .genorously {
+                font-size: 20px;
+            }
+            
+            .how {
+                font-size: 15px;
+            }
+            
+            .contact-form input, 
+            .contact-form textarea {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 80px;
+            }
+            
+            .wrapper {
+                height: 80px;
+            }
+            
+            .logo {
+                height: 60px;
+            }
+            
+            .search {
+                display: none;
+            }
+            
+            .wrapper-content {
+                gap: 10px;
+            }
+            
+            .dropdown button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            
+            .pictures {
+                grid-template-columns: 1fr;
+            }
+            
+            .be_part {
+                font-size: 28px;
+            }
+        }
+
+        /* Animation Classes */
+        .fadeIn {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .slideInUp {
+            animation: slideInUp 1s ease forwards;
+        }
+        
+        .slideInLeft {
+            animation: slideInLeft 1s ease forwards;
+        }
+        
+        .slideInRight {
+            animation: slideInRight 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
             }
         }
     </style>
 </head>
 <body>
 
-    
+    <!-- Header Navigation -->
     <div class="wrapper">
-        <img class="logo" src="WhatsApp_Image_2025-02-27_at_16.00.15_b85efd61-removebg-preview (1).png" alt="Prerana logo">
+        <img class="logo" src="/api/placeholder/200/80" alt="Prerana logo">
         <input type="text" class="search" placeholder="Search...">
         <div class="wrapper-content">
-            <div class="space>">
             <div class="dropdown">
-                <button>Contact</button>
+                <button><i class="fas fa-phone-alt"></i> Contact</button>
                 <div class="content">
-                    <a href="mailto:prerana@gmail.com">Email: prerana@gmail.com</a>
-                    <a href="tel:6282069689">Ph no. 6282069689</a>
+                    <a href="mailto:prerana@gmail.com"><i class="fas fa-envelope"></i> Email: prerana@gmail.com</a>
+                    <a href="tel:6282069689"><i class="fas fa-phone"></i> Ph no. 6282069689</a>
                 </div>
             </div>
             <div class="dropdown">
-                <button>Gallery</button>
+                <button><i class="fas fa-images"></i> Gallery</button>
                 <div class="content">
-                    <a href="photoNvideos.html">Photo Gallery</a>
-                    <a href="photoNvideos.html">Video Gallery</a>
+                    <a href="#"><i class="fas fa-camera"></i> Photo Gallery</a>
+                    <a href="#"><i class="fas fa-video"></i> Video Gallery</a>
                 </div>
             </div>
             <div class="dropdown">
-                <button>Donate</button>
+                <button><i class="fas fa-hand-holding-heart"></i> Donate</button>
                 <div class="content">
-                    <a href="aboutus2.html">Online Donation Policy</a>
-                    <a href="aboutus2.html">Donate Us</a>
+                    <a href="#"><i class="fas fa-file-alt"></i> Online Donation Policy</a>
+                    <a href="#"><i class="fas fa-heart"></i> Donate Now</a>
                 </div>
             </div>
             <div class="dropdown">
-                <button>About Us</button>
+                <button><i class="fas fa-info-circle"></i> About Us</button>
                 <div class="content">
-                    <a href="aboutus.html">Our Founder</a>
-                    <a href="#">Who We Are</a>
-                    <a href="#">Awards</a>
-                    <a href="#">Legal</a>
+                    <a href="#"><i class="fas fa-user"></i> Our Founder</a>
+                    <a href="#"><i class="fas fa-users"></i> Who We Are</a>
+                    <a href="#"><i class="fas fa-award"></i> Awards</a>
+                    <a href="#"><i class="fas fa-gavel"></i> Legal</a>
                 </div>
             </div>
-        </div>
-            </div>
-
-        </div>
-
-
-    <!-- Cover Image -->
-    <img class="cover" src="1.png" alt="Cover Image">
-
-
-    <div class="middle">
-        <div class="content">  <!-- Text Content -->
-            <h1 class="be_part">Be part of a change<br> you want to see in the world</h1>
-            <h2 class="genorously">"Generosity consists not of the sum given, but the manner in which it is bestowed."</h2>
-            <p class="how">Prerna Educational and Charitable Trust, established in 2013, is a non-profit organization dedicated to the welfare of orphans and visually impaired individuals. Our mission is to provide love, care and education to those in need, helping them live with dignity and achieve their fullest potential.
-
-
-                Join us in making a difference in the lives of the less fortunate. Together, we can inspire hope and create a better tomorrow for the orphaned and visually impaired.
-                
-                Prerna Educational and Charitable Trust was founded in 2013 and lead by Sri.Vaibhav Biradar, with a vision to support and uplift the orphaned and visually impaired members of society.<br> Since its inception, the trust has grown into a beacon of hope for countless individuals,<br> providing them with shelter, education, and a path toward independence.</p>
-            
-            <div class="button-container">
-                <button class="orange_button">&#8594; Our Mission</button>
-                <button class="blue_button">&#8594; Our Vision</button>
-            </div>
-    
-            <a href="#" class="more_about">MORE ABOUT US</a>
-        </div>
-    
-        <div class="pictures">  <!-- Image Section -->
-            <img src="google6.webp" alt="Charity">
-            <img src="google5.jpg" alt="Helping">
-            <img src="google5.jpg" alt="Children">
-            <div class="play-icon"></div>
         </div>
     </div>
-    <!-- Introduction Section -->
-    <section class="stakeholders">
+
+    <!-- Cover Image -->
+    <div class="cover-section">
+        <img class="cover" src="/api/placeholder/1200/600" alt="Cover Image">
+    </div>
+
+    <!-- Middle Section -->
+    <section class="middle">
+        <div class="middle-container">
+            <div class="content slideInLeft">
+                <h1 class="be_part">Be part of a <span>change</span><br> you want to see in the world</h1>
+                <h2 class="genorously">"Generosity consists not of the sum given, but the manner in which it is bestowed."</h2>
+                <p class="how">Prerna Educational and Charitable Trust, established in 2013, is a non-profit organization dedicated to the welfare of orphans and visually impaired individuals. Our mission is to provide love, care and education to those in need, helping them live with dignity and achieve their fullest potential.
+                <br><br>
+                Join us in making a difference in the lives of the less fortunate. Together, we can inspire hope and create a better tomorrow for the orphaned and visually impaired.
+                <br><br>
+                Prerna Educational and Charitable Trust was founded in 2013 and lead by Sri.Vaibhav Biradar, with a vision to support and uplift the orphaned and visually impaired members of society. Since its inception, the trust has grown into a beacon of hope for countless individuals, providing them with shelter, education, and a path toward independence.</p>
+                
+                <div class="button-container">
+                    <button class="orange_button"><i class="fas fa-arrow-right"></i> Our Mission</button>
+                    <button class="blue_button"><i class="fas fa-arrow-right"></i> Our Vision</button>
+                </div>
+        
+                <a href="#" class="more_about">MORE ABOUT US <i class="fas fa-chevron-right"></i></a>
+            </div>
+        
+            <div class="pictures slideInRight">
+                <img src="/api/placeholder/300/300" alt="Charity Work 1">
+                <img src="/api/placeholder/300/300" alt="Charity Work 2">
+                <img src="/api/placeholder/300/300" alt="Charity Work 3">
+                <img src="/api/placeholder/300/300" alt="Charity Work 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakeholders Section -->
+    <section class="stakeholders fadeIn">
         <h1>PRERANA EDUCATIONAL AND CHARITY TRUST</h1>
         <h2>VAIBHAV BIRADAR</h2>
         <strong>(Managing Trustee)</strong>
-        <p>Empowering lives through education, healthcare, and social welfare.</p>
+        <p>Empowering lives through education, healthcare, and social welfare. We believe in creating sustainable change by focusing on holistic development and community empowerment.</p>
     </section>
 
-    <!-- Initiatives Section with Background -->
-    <section class="initiatives">
+    <!-- Initiatives Section -->
+    <section class="initiatives slideInUp">
         <h2>Our Initiatives</h2>
         <ul>
-            <li>📚 Free Education for Underprivileged</li>
-            <li>🏥 Healthcare & Medical Aid</li>
-            <li>🍛 Food Distribution for the Needy</li>
-            <li>🏡 Shelter & Rehabilitation Programs</li>
-            <li>💼 Skill Development & Job Assistance</li>
+            <li><i class="fas fa-book fa-lg" style="color: red; margin-right: 10px;"></i> Free Education for Underprivileged Children</li>
+            <li><i class="fas fa-heartbeat fa-lg" style="color: red; margin-right: 10px;"></i> Healthcare & Medical Aid for the Needy</li>
+            <li><i class="fas fa-utensils fa-lg" style="color: red; margin-right: 10px;"></i> Food Distribution Programs</li>
+            <li><i class="fas fa-home fa-lg" style="color: red; margin-right: 10px;"></i> Shelter & Rehabilitation Support</li>
+            <li><i class="fas fa-briefcase fa-lg" style="color: red; margin-right: 10px;"></i> Skill Development & Job Assistance</li>
         </ul>
     </section>
 
-    <!-- Contact Form Section with Background -->
-    <section class="contact-form">
+    <!-- Contact Form Section -->
+    <section class="contact-form fadeIn">
         <h2>Get in Touch</h2>
-        <form action="https://formsubmit.co/joyalantonny@gmail.com" method="POST">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="form-container">
+            <form action="https://formsubmit.co/joyalantonny@gmail.com" method="POST">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p class="footer-text">© 2025 Prerana Educational & Charity Trust | Follow us on 
-            <a href="#">Facebook</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">Instagram</a>
-        </p>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+            <a href="#">Donate</a>
+        </div>
+        
+        <p class="footer-text">© 2025 Prerana Educational & Charity Trust. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        // Simple scroll animation for the navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.wrapper');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Add animation classes when elements come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.fadeIn, .slideInUp, .slideInLeft, .slideInRight');
+            
+            // Initially show elements in viewport
+            checkVisibility();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkVisibility);
+            
+            function checkVisibility() {
+                animatedElements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    
+                    // If element is in viewport
+                    if(position.top < window.innerHeight && position.bottom >= 0) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translate(0)';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
